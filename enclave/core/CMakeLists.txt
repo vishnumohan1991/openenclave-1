@@ -65,6 +65,8 @@ target_compile_options(oecore PUBLIC
 
 target_compile_options(oecore INTERFACE $<$<COMPILE_LANGUAGE:CXX>:-nostdinc++>)
 
+target_compile_definitions(oecore PUBLIC "OE_API_VERSION=2")
+
 if(USE_LIBSGX)
     target_compile_definitions(oecore PUBLIC OE_USE_LIBSGX)
 endif()

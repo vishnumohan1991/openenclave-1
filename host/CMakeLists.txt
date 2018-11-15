@@ -108,6 +108,8 @@ endif()
 
 target_compile_definitions(oehost PRIVATE OE_BUILD_UNTRUSTED)
 
+target_compile_definitions(oehost PUBLIC "OE_API_VERSION=2")
+
 # Additional compilation and link options when using libsgx
 if(USE_LIBSGX)
 message("USE_LIBSGX is set, building oehost with FLC dependency")
