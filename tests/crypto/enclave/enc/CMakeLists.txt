@@ -6,7 +6,7 @@ oeedl_file(../crypto.edl enclave gen)
 
 add_executable(cryptoenc
     enc.c
-    ../../../../common/rand.S
+    ../../../../common/sgx/rand.S
     ../../read_file.c
     ../../asn1_tests.c
     ../../crl_tests.c

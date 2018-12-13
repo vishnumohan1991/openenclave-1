@@ -48,9 +48,9 @@ static const char* get_fullpath(const char* path)
 #include <openenclave/internal/trace.h>
 #include <openenclave/internal/utils.h>
 #include <string.h>
+#include "../memalign.h"
 #include "cpuid.h"
 #include "enclave.h"
-#include "../memalign.h"
 #include "sgxload.h"
 
 static oe_once_type _enclave_init_once;
