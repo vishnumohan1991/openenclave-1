@@ -676,6 +676,43 @@ oe_enclave_t* oe_get_enclave(void);
  */
 oe_result_t oe_random(void* data, size_t size);
 
+
+
+
+/**
+ * This enumeration defines the format of the asymmetric key.
+ */
+typedef enum _oe_cert_format {
+    /**
+     * The PEM format.
+     */
+    OE_CERT_FORMAT_PEM = 1,
+
+    /**
+     * The DER format.
+     */
+    OE_CERT_FORMAT_DER = 2,
+
+    /**
+     * Unused.
+     */
+    _OE_CERT_FORMAT_MAX = OE_ENUM_MAX,
+} oe_cert_format_t;
+// Todo: add comments
+// Should this be an enclave API?
+oe_result_t oe_gen_x509cert_for_TLS(oe_cert_format_t cert_format,
+                                    uint8_t** output_cert,
+                                    size_t* output_cert_size);
+/**
+ * Frees the given cert
+ *
+ * @param cert If not NULL, the key buffer to free.
+ * @param cert_size The size of cert buffer.
+ */
+void oe_free_x509cert_for_TLS(
+    uint8_t* cert,
+    size_t cert_size);
+
 OE_EXTERNC_END
 
 #endif /* _OE_ENCLAVE_H */

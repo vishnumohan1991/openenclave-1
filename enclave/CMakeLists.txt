@@ -27,7 +27,8 @@ add_library(oeenclave STATIC
     revocationinfo.c
     rsa.c
     sha.c
-    start.S)
+    start.S
+    tls.c)
 
 if(CMAKE_C_COMPILER_ID MATCHES GNU)
 target_compile_options(oeenclave PRIVATE -Wjump-misses-init)
