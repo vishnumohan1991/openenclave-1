@@ -2,7 +2,7 @@
 # Licensed under the MIT License.
 
 include(oeedl_file)
-include(add_enclave_executable)
+include(add_enclave)
 
 oeedl_file(../debug_mode.edl enclave gen)
 
