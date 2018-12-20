@@ -10,5 +10,3 @@ endif()
 add_enclave_test(tests/thread_local 
      thread_local_host 
      thread_local_enc)
-
-set_tests_properties(tests/thread_local PROPERTIES SKIP_RETURN_CODE 2)
